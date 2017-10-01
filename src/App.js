@@ -4,6 +4,7 @@ import './App.css';
 import store from './store';
 
 import { Route, NavLink, Switch, withRouter } from 'react-router-dom';
+import { observer } from 'mobx-react';
 
 import routes from './shared/config/routes';
 import NoMatch from './pages/404';
@@ -15,16 +16,22 @@ type Props = {
 
 type State = {};
 
-console.log(store.reports);
-
-const App = class App extends React.Component<Props, State> {
+@observer
+class App extends React.Component<Props, State> {
   componentDidCatch(err, stack) {
     console.error(err, stack);
+  }
+
+  addToStore() {
+    store.createReport();
   }
 
   render() {
     return (
       <div className="app">
+        { JSON.stringify(store.reports) }
+        <button onClick={this.addToStore}>add to store</button>
+
         {this.props.location.pathname !== routes.login.url && (
           <header className="app-header">
             <nav>

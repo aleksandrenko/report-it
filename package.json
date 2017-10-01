@@ -20,7 +20,6 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "flow-bin": "^0.56.0",
-    "webpack-dashboard": "^1.0.0-7"
+    "flow-bin": "^0.56.0"
   }
 }
