@@ -1,0 +1,1 @@
+export default window.location.href.indexOf("debug=true") !== -1 || location.hostname === "localhost" || location.hostname === "127.0.0.1";
