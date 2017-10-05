@@ -1,14 +1,34 @@
 import { observable, autorun } from 'mobx';
 import isDebug from '../utils/isDebug';
 
+class Comment {
+  constructor() {
+    this.id = Date.now();
+    this.url = '';
+    this.timestamp = Date.now();
+    this.description = 'a pot hole in the ground';
+    this.author = 'Nikolay Aleksandrenko';
+  }
+}
+
+class Location {
+  constructor() {
+    this.lat = 42.6782107;
+    this.lng = 23.3182269;
+  }
+
+}
+
 class Report {
   constructor() {
-    this.id = 'not connected';
-    this.category = 'not connected';
-    this.location = 'not connected';
-    this.description = 'not connected';
-    this.author = 'not connected';
-    this.comments = ['not connected', 'not connected'];
+    this.id = Date.now();
+    this.url = '';
+    this.timestamp = Date.now();
+    this.category = 'Pot hole';
+    this.location = new Location();
+    this.description = 'a pot hole in the ground';
+    this.author = 'Nikolay Aleksandrenko';
+    this.comments = [new Comment(), new Comment()];
   }
 }
 

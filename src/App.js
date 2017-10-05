@@ -29,9 +29,6 @@ class App extends React.Component<Props, State> {
   render() {
     return (
       <div className="app">
-        { JSON.stringify(store.reports) }
-        <button onClick={this.addToStore}>add to store</button>
-
         {this.props.location.pathname !== routes.login.url && (
           <header className="app-header">
             <nav>
@@ -51,6 +48,10 @@ class App extends React.Component<Props, State> {
         )}
         <content className="app-body">
           <nav className="_temp-nav">
+            <div>
+              <button onClick={this.addToStore}>create example signal</button>
+            </div>
+            
             <ul>
               <li>
                 <NavLink to={routes.index.url} exact>
