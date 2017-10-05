@@ -21,10 +21,10 @@ class Component extends React.Component<Props, State> {
       <li>
         <hr/>
         <img src={item.url} alt={item.category} width="40px" height="40px" /> <br />
-        <span>{item.category}</span> &nbsp
-        reported { moment(item.timestamp).fromNow() } &nbsp
+        <span>{item.category}</span>
+        reported { moment(item.timestamp).fromNow() }
         from <a href="./">{ item.author }</a> <br />
-        <span>( {item.comments.length} ) comments</span>
+        <span>{item.comments.length} comments</span>
       </li>
     );
 

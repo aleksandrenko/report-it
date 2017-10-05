@@ -30,9 +30,11 @@ section {
   font: inherit;
   vertical-align: baseline;
 }
+
 body {
   line-height: 1;
 }
+
 ol,
 ul {
   list-style: none;
@@ -51,7 +53,7 @@ body {
 ._temp-nav {
   position: fixed;
   top: 30px;
-  right: -200px;
+  left: -250px;
   padding: 20px;
   background: #eee;
   border: solid 1px #aaa;
