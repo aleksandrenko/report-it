@@ -29,32 +29,34 @@ class Component extends React.Component<Props, State> {
   };
 
   onReportSubmit = () => {
+    console.log('submit');
     this.setState({
       currentStep: 1
     });
   };
 
+  steps = [
+    {
+      component: TakePhoto,
+      completeHandler: this.onStepCompleted
+    },
+    {
+      component: SelectCatgory,
+      completeHandler: this.onStepCompleted
+    },
+    {
+      component: ChooseLocation,
+      completeHandler: this.onStepCompleted
+    },
+    {
+      component: SubmitReport,
+      completeHandler: this.onReportSubmit
+    }
+  ];
+
   render() {
-    const steps = [
-      {
-        component: TakePhoto,
-        completeHandler: this.onStepCompleted
-      },
-      {
-        component: SelectCatgory,
-        completeHandler: this.onStepCompleted
-      },
-      {
-        component: ChooseLocation,
-        completeHandler: this.onStepCompleted
-      },
-      {
-        component: SubmitReport,
-        completeHandler: this.onReportSubmit
-      }
-    ];
-    const SelectedStep = steps[this.state.currentStep-1];
-    const SelectedStepComponent = steps[this.state.currentStep-1].component;
+    const SelectedStep = this.steps[this.state.currentStep-1];
+    const SelectedStepComponent = this.steps[this.state.currentStep-1].component;
 
     return (
       <section className="report">

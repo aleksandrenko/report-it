@@ -15,6 +15,7 @@ class Component extends React.Component<Props, State> {
     return (
       <div>
         <span>take photo</span>
+        <input type="file" accept="image/*;capture=camera"></input>
         <button onClick={this.props.onComplete}>take photo</button>
       </div>
     );
